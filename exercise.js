@@ -86,3 +86,24 @@ const javaStr = (str) => {
 let str = "ja_va_scr_ipt";
 let str2 = "";
 javaStr(str)
+
+const idnk = (string) => {
+    let secondStr = ""
+    for (let i = 0; i < string.length; i++)
+    {
+    if (string.charAt(i) === "y" ) {secondStr = secondStr + "yes"}
+    else {secondStr = secondStr + string.charAt(i)} 
+    }
+    console.log(secondStr)
+}
+let string = "don't know wh";
+idnk(string)
+
+const containsY = (string) =>{
+    let isPresent = "no"
+    for (let i = 0; i <string.length; i++){
+        if(string.charAt(i) === "y") {isPresent = "yes"}
+    }
+    return isPresent
+}
+console.log(containsY(string))

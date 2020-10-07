@@ -96,7 +96,7 @@ const idnk = (string) => {
     }
     console.log(secondStr)
 }
-let string = "don't know wh";
+let string = "don't know why";
 idnk(string)
 
 const containsY = (string) =>{

@@ -1,2 +1,2 @@
 # Jps-playground
-Playground hmtl, ccs js.
+Playground html, ccs js.

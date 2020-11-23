@@ -194,12 +194,73 @@ let resetAccount = function (account){
 
 let getAccountSummary = function (account) {
     let balance = account.icome - account.expenses
-    return ` Account for ${account.name} . has a balance of ${balance} $${account.income} in income monthly and $${account.expenses} in total expenses.`
+    return ` Account for ${account.name} . has a ${balance} of $${account.income} in income monthly and $${account.expenses} in total expenses.`
 }
 
 addIncome (myAccount, 2000)
-addExpense (myAccount, 2.50)
+addExpense (myAccount, 2,50)
 addExpense (myAccount, 160)
 console.log(getAccountSummary(myAccount))
 resetAccount(myAccount)
 console.log(getAccountSummary(myAccount))
+
+// Objects with funcionts 
+
+let restaurant = {
+    name : 'ASB',
+    guestCapacity:  75,
+    guestCount : 0,
+    checkAvaliability : function (partySize){
+        let seatsLeft = this.guestCapacity - this.guestCount
+        return partySize <= seatsLeft
+    }, 
+    seatParty : function (partySize){
+        this.guestCount = this.guestCount + partySize
+    },
+   removeParty: function (partySize){
+       this.guestCount = this.guestCount - partySize
+   }
+}
+ restaurant.seatParty(72)
+ console.log(restaurant.checkAvaliability(4))
+ restaurant.removeParty(5)
+ console.log(restaurant.checkAvaliability(4))
+
+// string methods
+
+let userNameForPassword = ' Juan Pablo '
+ 
+// Length property
+console.log(name.lenght)
+
+//convert to upper case
+console.log(name.toUpperCase())
+
+//convert to lower case
+console.log(name.toLowerCase())
+
+//Includes method
+let password = 'abc123asda0dad-13'
+console.log(password.includes('password'))
+
+//Trim 
+console.log(name.trim())
+
+//MDN for strings and everything else actually 
+// https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/prototype 
+
+//challenge 
+
+let isValidPassword = function (password){
+    if (password.lenght > 8 && !password.includes('password')){
+        return true
+    }else {
+        return false
+    }
+} 
+// since I know that my 'if' statement is valid I can just return the value and have something like this
+//  return password.lenght > 8 && !password.includes('password')
+
+console.log(isValidPassword('asdfp'))
+console.log(isValidPassword('abc123!@#$%^&'))
+console.log(isValidPassword('123abcadadaqheajrere'))

@@ -1,25 +1,23 @@
 //  *
 // ***
 //*****
-/*const rows = 3
-let esp = ' '
-for (let i=rows; i>0; i--){
-  console.log(' ')
-}*/
-const drawLine = (columns, asterisk) =>{
-let sum = '';
-for (let i=1; i<columns; i++){
-  sum = sum + ' ';
-}
-sum = sum + asterisk
-console.log(sum)
-}
-drawLine(3,'*')
-drawLine(2,'***')
-drawLine(1,'*****')
 
+const drawLine = (columns, character) =>{
+let sum = '';
+for (let i=0; i<columns; i++){
+  sum = sum + character;
+}
+return sum
+}
 
 const drawPyramid = (rows) =>{
-let numberOfAsterisks = 0;
-for (let i=1; i <= rows ; i++){}
+let numberOfAsterisks = 1;
+for (let i=0; i < rows ; i++){
+let rowWithChars = drawLine(rows - i,'&nbsp;') + drawLine (i + numberOfAsterisks, '*')
+
+numberOfAsterisks ++;
+document.write(rowWithChars + '<br>' ) 
 }
+}
+drawPyramid(3)
+drawPyramid(5)
